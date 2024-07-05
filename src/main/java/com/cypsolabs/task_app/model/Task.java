@@ -27,8 +27,13 @@ public class Task {
     public String getTitle() {
         return title;
     }
+    // title should not be empty
     public void setTitle(String title) {
-        this.title = title;
+        if (title != null && !title.isEmpty()) {
+            this.title = title;
+        } else {
+            throw new IllegalArgumentException("Title should not be empty");
+        }
     }
 
     public String getDescription() {
